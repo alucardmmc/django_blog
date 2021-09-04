@@ -7,4 +7,17 @@
     "**/requirements{/**,*}.{txt,in}": "pip-requirements"
   },
   "emmet.includeLanguages": {"django-html": "html"},
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4  
+  },
+  "beautify.language": {
+    "html": [
+      "django-html"
+    ]
+  },
+  "[django-html]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "HookyQR.beautify"
+  }
 }
