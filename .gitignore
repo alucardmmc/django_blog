@@ -154,3 +154,6 @@ cython_debug/
 
 # Prod Static Files
 staticfiles/
+
+# Zip file for Production
+django_my_site.rar
