@@ -1,5 +1,6 @@
 {
   "python.languageServer": "Pylance",
+  "python.defaultInterpreterPath": "${workspaceFolder}/env/Scripts/python.exe",
   "files.associations": {
     "**/*.html": "html",
     "**/templates/**/*.html": "django-html",
