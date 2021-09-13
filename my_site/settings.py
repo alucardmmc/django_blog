@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from os import getenv
 from pathlib import Path
 from decouple import config
 
@@ -21,13 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = getenv("SECRET_KEY", ')j9qa#d=4t)z)4k@z0_-t+d5o!0+2)3#ra1%o-*m(z-uvxbau4')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('IS_DEVELOPMENT', default=True, cast=bool)
+DEBUG = getenv("IS_DEVELOPMENT", True)
 
 ALLOWED_HOSTS = [
-    config('APP_HOST', default='localhost')
+    getenv("APP_HOST", 'localhost')
 ]
 
 
@@ -123,8 +124,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
